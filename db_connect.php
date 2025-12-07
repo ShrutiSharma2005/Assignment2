@@ -1,5 +1,5 @@
 <?php
-
+$password=""
 $servername = "127.0.0.1";
 $username = "root";
 $dbname = "booking";
