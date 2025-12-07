@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Car Booking Form</title>
+    <style>
+       /* Simple Car Rental Form CSS */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+fieldset {
+    border: 1px solid #aaa;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: #fafafa;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 3px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #45a049;
+}
+
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Car Rental Booking Form</h1>
+
+        <form id="rentalForm" action="submit.php" method="POST" novalidate>
+            <fieldset>
+                <legend>Customer Information</legend>
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="10 digits" />
+            </fieldset>
+
+            <fieldset>
+                <legend>Booking Details</legend>
+                <label for="car">Select Car</label>
+                <select id="car" name="car" required>
+                    <option value="" disabled selected>-- Choose a Car --</option>
+                    <option value="Swift">Swift</option>
+                    <option value="Creta">Creta</option>
+                    <option value="Thar">Thar</option>
+                    <option value="Innova">Innova</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="bookingDate">Booking Date</label>
+                <input type="date" id="bookingDate" name="bookingDate" required />
+
+                <label for="returnDate">Return Date</label>
+                <input type="date" id="returnDate" name="returnDate" required />
+
+                <label for="pickupLocation">Pickup Location</label>
+                <input type="text" id="pickupLocation" name="pickupLocation" required />
+
+                <label for="purpose">Purpose of Booking</label>
+                <textarea id="purpose" name="purpose" rows="3" required></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Options</legend>
+                <label for="driverLicense">Driver's License Number</label>
+                <input type="text" id="driverLicense" name="driverLicense" pattern="[A-Za-z0-9]{10,15}" required
+                    placeholder="Alphanumeric 10-15 chars" />
+
+                <label for="licensePlate">License Plate Number</label>
+                <input type="text" id="licensePlate" name="licensePlate" required placeholder="e.g., ABC-1234" />
+
+                <label>Insurance Option</label>
+                <div class="insurance-options">
+                    <input type="radio" id="insuranceBasic" name="insurance" value="Basic" required />
+                    <label for="insuranceBasic">Basic</label>
+                    <input type="radio" id="insuranceFull" name="insurance" value="Full" />
+                    <label for="insuranceFull">Full</label>
+                </div>
+
+                <label>Additional Services</label>
+                <div class="services-options">
+                    <input type="checkbox" id="serviceGPS" name="services[]" value="GPS" />
+                    <label for="serviceGPS">GPS</label>
+                    <input type="checkbox" id="serviceChildSeat" name="services[]" value="Child Seat" />
+                    <label for="serviceChildSeat">Child Seat</label>
+                    <input type="checkbox" id="serviceDriver" name="services[]" value="Additional Driver" />
+                    <label for="serviceDriver">Additional Driver</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Payment Details</legend>
+                <label for="paymentMethod">Payment Method</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="" disabled selected>-- Select Method --</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                    <option value="Cash">Cash</option>
+                </select>
+
+               
+            </fieldset>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
