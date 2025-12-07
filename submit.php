@@ -43,10 +43,18 @@
     <p><b>Pickup Location:</b> <?php echo htmlspecialchars($location); ?></p>
     <p><b>Car Model Selected:</b> <?php echo htmlspecialchars($car); ?></p>
     
-    <?php if ($total !== '-'): ?>
+    <p><b>Purpose:</b> <?php echo htmlspecialchars($purpose); ?></p>
+    
     <hr>
+    <?php if ($returnDate !== '-'): ?>
     <p><b>Return Date:</b> <?php echo htmlspecialchars($returnDate); ?></p>
+    <?php endif; ?>
+
+    <?php if ($payment !== '-'): ?>
     <p><b>Payment Method:</b> <?php echo htmlspecialchars($payment); ?></p>
+    <?php endif; ?>
+
+    <?php if ($total !== '-'): ?>
     <p><b>Total Cost:</b> ₹<?php echo htmlspecialchars($total); ?></p>
     <?php endif; ?>
 
