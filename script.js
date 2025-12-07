@@ -1,4 +1,4 @@
-// script.js - Form validation using jQuery
+
 $(document).ready(function () {
     // Check if running via file protocol
     if (window.location.protocol === 'file:') {
@@ -16,11 +16,11 @@ $(document).ready(function () {
         $(element).next('.error').remove();
     }
 
-    $('#bookForm').on('submit', function (e) {
+    $('#rentalForm').on('submit', function (e) {
         let isValid = true;
 
         // Full Name
-        const fullname = $('#fullname');
+        const fullname = $('#fullName');
         if (!fullname.val().trim()) {
             showError(fullname, 'Full Name is required');
             isValid = false;
@@ -52,17 +52,17 @@ $(document).ready(function () {
             clearError(phone);
         }
 
-        // Pickup Date
-        const date = $('#date');
+        // Booking Date
+        const date = $('#bookingDate');
         if (!date.val()) {
-            showError(date, 'Pickup Date is required');
+            showError(date, 'Booking Date is required');
             isValid = false;
         } else {
             clearError(date);
         }
 
         // Pickup Location
-        const location = $('#location');
+        const location = $('#pickupLocation');
         if (!location.val().trim()) {
             showError(location, 'Pickup Location is required');
             isValid = false;
